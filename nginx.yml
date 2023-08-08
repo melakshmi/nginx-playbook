@@ -1,0 +1,12 @@
+---
+- name: Install OpenJDK 11 on Ubuntu
+  hosts: all
+  become: true
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+    - name: Install OpenJDK 11
+      apt:
+        name: openjdk-11-jdk
+        state: present
